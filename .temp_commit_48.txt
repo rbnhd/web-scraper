@@ -1,0 +1,1 @@
+// Commit #48: test - improve error messages in stealth features
