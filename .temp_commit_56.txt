@@ -1,0 +1,1 @@
+// Commit #56: refactor - enhance debugging in browser manager
