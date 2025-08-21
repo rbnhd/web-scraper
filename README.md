@@ -1,14 +1,18 @@
 # E-commerce Web Scraper
 
-A powerful Node.js web scraper built with Puppeteer for extracting product data from various e-commerce websites.
+A powerful Node.js web scraper built with Puppeteer for extracting product data from various
+e-commerce websites.
 
 ## 🚨 Important Note
 
 **For learning and testing purposes, use the demo scraper first:**
+
 ```bash
 npm run demo
 ```
-This uses safe testing websites (books.toscrape.com and quotes.toscrape.com) that are designed for scraping practice.
+
+This uses safe testing websites (books.toscrape.com and quotes.toscrape.com) that are designed for
+scraping practice.
 
 ## ✨ Features
 
@@ -24,12 +28,22 @@ This uses safe testing websites (books.toscrape.com and quotes.toscrape.com) tha
 
 ## 🛠️ Installation
 
+### Prerequisites
+
+- **Node.js 18.0.0 or higher** (required for latest Puppeteer version)
+- npm (comes with Node.js)
+
+### Setup
+
 1. Clone or download the project files
 2. Install dependencies:
 
 ```bash
 npm install
 ```
+
+> **Note**: If you're using Node.js < 18, you may see compatibility warnings. The code will still
+> work in CI/CD environments running Node.js 18+.
 
 ## 🚀 Quick Start
 
@@ -75,6 +89,7 @@ node scraper.js ebay "smartphone" --output=my_products.csv
 - 📧 **eBay and others may require special handling**
 
 **If you encounter bot detection:**
+
 1. Increase delay: `--delay=5000` (5 seconds)
 2. Use non-headless mode: `--headless=false`
 3. Try the demo sites first: `npm run demo`
@@ -82,23 +97,25 @@ node scraper.js ebay "smartphone" --output=my_products.csv
 
 ## 📋 Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run demo` | Run safe demo scraper with test sites |
-| `npm test` | Run functionality tests |
-| `npm start` | Run main scraper (requires arguments) |
-| `npm run example` | Run example scripts |
+| Command           | Description                           |
+| ----------------- | ------------------------------------- |
+| `npm run demo`    | Run safe demo scraper with test sites |
+| `npm test`        | Run functionality tests               |
+| `npm start`       | Run main scraper (requires arguments) |
+| `npm run example` | Run example scripts                   |
 
 ## 🎯 Supported Sites
 
 ### Demo Sites (Safe for Testing)
+
 - **books.toscrape.com** - Book catalog for scraping practice
 - **quotes.toscrape.com** - Famous quotes for scraping practice
 
 ### E-commerce Sites (Use Responsibly)
+
 - **Amazon** (`amazon`) - May require special handling
-- **eBay** (`ebay`) 
-- **Etsy** (`etsy`) 
+- **eBay** (`ebay`)
+- **Etsy** (`etsy`)
 - **Walmart** (`walmart`)
 
 ## Configuration
@@ -122,13 +139,13 @@ The scraper uses `config.json` for site-specific configurations:
 
 ## Options
 
-| Option | Description | Default |
-|--------|-------------|---------|
-| `--headless` | Run browser in headless mode | `true` |
-| `--delay` | Delay between requests (ms) | `2000` |
-| `--output` | Output CSV filename | `scraped_products.csv` |
-| `--timeout` | Page load timeout (ms) | `30000` |
-| `--maxRetries` | Maximum retry attempts | `3` |
+| Option         | Description                  | Default                |
+| -------------- | ---------------------------- | ---------------------- |
+| `--headless`   | Run browser in headless mode | `true`                 |
+| `--delay`      | Delay between requests (ms)  | `2000`                 |
+| `--output`     | Output CSV filename          | `scraped_products.csv` |
+| `--timeout`    | Page load timeout (ms)       | `30000`                |
+| `--maxRetries` | Maximum retry attempts       | `3`                    |
 
 ## Output Format
 
@@ -168,18 +185,18 @@ You can also use the scraper as a module in your own code:
 const EcommerceScraper = require('./scraper');
 
 async function customScrape() {
-    const scraper = new EcommerceScraper({
-        headless: true,
-        delay: 3000,
-        outputFile: 'my_products.csv'
-    });
+  const scraper = new EcommerceScraper({
+    headless: true,
+    delay: 3000,
+    outputFile: 'my_products.csv'
+  });
 
-    const result = await scraper.scrape('amazon', 'wireless mouse');
-    
-    if (result.success) {
-        console.log(`Scraped ${result.count} products`);
-        console.log(`Data saved to: ${result.outputPath}`);
-    }
+  const result = await scraper.scrape('amazon', 'wireless mouse');
+
+  if (result.success) {
+    console.log(`Scraped ${result.count} products`);
+    console.log(`Data saved to: ${result.outputPath}`);
+  }
 }
 ```
 
@@ -246,4 +263,5 @@ MIT License - feel free to use and modify as needed.
 
 ## Disclaimer
 
-This tool is for educational and research purposes. Always ensure you comply with website terms of service and applicable laws when scraping data.
+This tool is for educational and research purposes. Always ensure you comply with website terms of
+service and applicable laws when scraping data.

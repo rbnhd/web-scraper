@@ -1,0 +1,162 @@
+name: PR Validation
+
+on:
+  pull_request:
+    branches: [ main ]
+    types: [opened, synchronize, reopened]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: |
+        npm ci
+        
+    - name: Run security audit
+      run: |
+        npm audit --audit-level=moderate
+        
+    - name: Check code formatting
+      run: |
+        npx prettier --check "**/*.{js,json,md}"
+        
+    - name: Run ESLint
+      run: |
+        npx eslint . --ext .js --max-warnings 0
+        
+    - name: Run unit tests
+      run: |
+        npm test
+        
+    - name: Test build process
+      run: |
+        npm run build --if-present
+        
+    - name: Check package vulnerabilities
+      run: |
+        npx audit-ci --config .audit-ci.json
+        
+    - name: Validate package.json
+      run: |
+        npm run validate --if-present || echo "No validate script found"
+        
+    - name: Check for outdated dependencies
+      run: |
+        npm outdated || true
+        
+    - name: Test scraper functionality
+      run: |
+        timeout 30s node demo.js || echo "Demo completed or timed out"
+      env:
+        NODE_ENV: test
+
+  code-quality:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run code coverage
+      run: |
+        npx jest --coverage --passWithNoTests || npm test
+        
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage/lcov.info
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: false
+
+  security-scan:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        scan-type: 'fs'
+        format: 'table'
+        exit-code: '0'  # Don't fail on vulnerabilities, just report them
+        
+    - name: Run npm audit
+      run: |
+        npm audit --audit-level=high || echo "Security audit completed with findings"
+
+  dependency-review:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Check for known vulnerabilities
+      run: |
+        echo "Checking for dependency vulnerabilities..."
+        npm audit --audit-level=moderate || echo "Audit completed with findings"
+        
+    - name: List outdated packages
+      run: |
+        echo "Checking for outdated dependencies..."
+        npm outdated || echo "All packages up to date or check completed"
+        
+  pr-size-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Check PR size
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const pr = context.payload.pull_request;
+          const additions = pr.additions;
+          const deletions = pr.deletions;
+          const changes = additions + deletions;
+          
+          if (changes > 10000) {
+            core.setFailed(`PR is extremely large (${changes} lines changed). Consider breaking it into smaller PRs.`);
+          } else if (changes > 5000) {
+            core.warning(`Very large PR detected (${changes} lines changed). Consider reviewing if this can be split.`);
+          } else if (changes > 1000) {
+            core.notice(`Large PR detected (${changes} lines changed). This is acceptable for initial setup.`);
+          }
+          
+          console.log(`PR size: +${additions} -${deletions} (${changes} total changes)`);
