@@ -42,7 +42,8 @@ scraping practice.
 npm install
 ```
 
-> **Note**: If you're using Node.js < 18, you may see compatibility warnings. The code will still work in CI/CD environments running Node.js 18+.
+> **Note**: If you're using Node.js < 18, you may see compatibility warnings. The code will still
+> work in CI/CD environments running Node.js 18+.
 
 ## 🚀 Quick Start
 

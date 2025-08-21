@@ -187,7 +187,7 @@ class EcommerceScraper {
    * Auto-scroll to trigger lazy loading
    */
   async autoScroll() {
-    await this.page.evaluate(async() => {
+    await this.page.evaluate(async () => {
       await new Promise(resolve => {
         let totalHeight = 0;
         const distance = 100;

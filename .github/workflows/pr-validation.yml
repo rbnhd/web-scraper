@@ -95,6 +95,7 @@ jobs:
 
   security-scan:
     runs-on: ubuntu-latest
+    continue-on-error: true  # Make this optional for repos without GitHub Advanced Security
     
     steps:
     - name: Checkout code
@@ -110,6 +111,7 @@ jobs:
     - name: Upload Trivy scan results to GitHub Security tab
       uses: github/codeql-action/upload-sarif@v3
       if: always()
+      continue-on-error: true  # Don't fail if SARIF upload is not available
       with:
         sarif_file: 'trivy-results.sarif'
 
