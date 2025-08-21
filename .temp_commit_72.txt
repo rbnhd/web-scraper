@@ -1,1 +1,0 @@
-// Commit #72: fix - add type definitions in scraper engine

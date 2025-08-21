@@ -1,1 +1,0 @@
-// Commit #15: perf - optimize screenshot capture in logging system

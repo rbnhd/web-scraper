@@ -1,1 +1,0 @@
-// Commit #21: ci - optimize database queries in stealth features

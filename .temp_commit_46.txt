@@ -1,1 +1,0 @@
-// Commit #46: docs - optimize load times in bot detection

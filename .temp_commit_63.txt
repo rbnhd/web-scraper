@@ -1,1 +1,0 @@
-// Commit #63: style - optimize memory usage in browser manager

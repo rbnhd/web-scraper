@@ -1,1 +1,0 @@
-// Commit #61: refactor - improve data validation in browser manager

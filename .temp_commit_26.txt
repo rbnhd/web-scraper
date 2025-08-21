@@ -1,1 +1,0 @@
-// Commit #26: chore - add type definitions in stealth features

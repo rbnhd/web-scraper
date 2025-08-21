@@ -1,1 +1,0 @@
-// Commit #18: ci - improve accessibility in wait conditions

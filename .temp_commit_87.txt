@@ -1,1 +1,0 @@
-// Commit #87: fix - improve code readability in demo framework
