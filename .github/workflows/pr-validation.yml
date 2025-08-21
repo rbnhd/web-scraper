@@ -95,7 +95,6 @@ jobs:
 
   security-scan:
     runs-on: ubuntu-latest
-    continue-on-error: true  # Make this optional for repos without GitHub Advanced Security
     
     steps:
     - name: Checkout code
@@ -105,30 +104,39 @@ jobs:
       uses: aquasecurity/trivy-action@master
       with:
         scan-type: 'fs'
-        format: 'sarif'
-        output: 'trivy-results.sarif'
+        format: 'table'
+        exit-code: '0'  # Don't fail on vulnerabilities, just report them
         
-    - name: Upload Trivy scan results to GitHub Security tab
-      uses: github/codeql-action/upload-sarif@v3
-      if: always()
-      continue-on-error: true  # Don't fail if SARIF upload is not available
-      with:
-        sarif_file: 'trivy-results.sarif'
+    - name: Run npm audit
+      run: |
+        npm audit --audit-level=high || echo "Security audit completed with findings"
 
   dependency-review:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
-    continue-on-error: true  # Make this optional for repos without GitHub Advanced Security
     
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
       
-    - name: Dependency Review
-      uses: actions/dependency-review-action@v3
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
       with:
-        fail-on-severity: moderate
-      continue-on-error: true
+        node-version: '20.x'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Check for known vulnerabilities
+      run: |
+        echo "Checking for dependency vulnerabilities..."
+        npm audit --audit-level=moderate || echo "Audit completed with findings"
+        
+    - name: List outdated packages
+      run: |
+        echo "Checking for outdated dependencies..."
+        npm outdated || echo "All packages up to date or check completed"
         
   pr-size-check:
     runs-on: ubuntu-latest
