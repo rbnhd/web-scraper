@@ -22,7 +22,14 @@ module.exports = {
     'no-multiple-empty-lines': ['error', { max: 2 }],
     'object-curly-spacing': ['error', 'always'],
     'array-bracket-spacing': ['error', 'never'],
-    'space-before-function-paren': ['error', 'never'],
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'never',
+        named: 'never',
+        asyncArrow: 'always'
+      }
+    ],
     'keyword-spacing': 'error',
     'space-infix-ops': 'error',
     'no-var': 'error',
