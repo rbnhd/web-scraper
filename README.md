@@ -28,12 +28,21 @@ scraping practice.
 
 ## 🛠️ Installation
 
+### Prerequisites
+
+- **Node.js 18.0.0 or higher** (required for latest Puppeteer version)
+- npm (comes with Node.js)
+
+### Setup
+
 1. Clone or download the project files
 2. Install dependencies:
 
 ```bash
 npm install
 ```
+
+> **Note**: If you're using Node.js < 18, you may see compatibility warnings. The code will still work in CI/CD environments running Node.js 18+.
 
 ## 🚀 Quick Start
 
