@@ -31,7 +31,7 @@
     "puppeteer": "^24.17.0"
   },
   "devDependencies": {
-    "audit-ci": "^6.6.1",
+    "audit-ci": "^7.1.0",
     "eslint": "^8.57.0",
     "license-checker": "^25.0.1",
     "prettier": "^3.2.5"
