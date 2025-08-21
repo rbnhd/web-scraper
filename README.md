@@ -7,9 +7,11 @@
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)
 
-A powerful, production-ready Node.js web scraper built with Puppeteer for extracting product data from various e-commerce websites.
+A powerful, production-ready Node.js web scraper built with Puppeteer for extracting product data
+from various e-commerce websites.
 
-[Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Contributing](#-contributing)
+[Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) •
+[Documentation](#-documentation) • [Contributing](#-contributing)
 
 </div>
 
@@ -23,7 +25,8 @@ A powerful, production-ready Node.js web scraper built with Puppeteer for extrac
 npm run demo
 ```
 
-This uses safe testing websites (books.toscrape.com and quotes.toscrape.com) that are designed for scraping practice.
+This uses safe testing websites (books.toscrape.com and quotes.toscrape.com) that are designed for
+scraping practice.
 
 ## ✨ Features
 
@@ -118,6 +121,7 @@ node scraper.js ebay "smartphone" --output=my_products.csv
 ## 📊 Project Status
 
 ### CI/CD Pipeline
+
 - ✅ **Multi-Node Testing**: Validated on Node.js 18.x, 20.x, 22.x
 - ✅ **Security Scanning**: Automated vulnerability detection
 - ✅ **Code Quality**: ESLint + Prettier enforcement
@@ -125,6 +129,7 @@ node scraper.js ebay "smartphone" --output=my_products.csv
 - ✅ **Main Branch Protection**: Comprehensive pre-deployment validation
 
 ### Performance Metrics
+
 - ⚡ **Scraping Speed**: 2-5 seconds per page (configurable)
 - 📈 **Success Rate**: 95%+ on supported demo sites
 - 🛡️ **Error Recovery**: 3-retry mechanism with exponential backoff
@@ -153,11 +158,11 @@ const EcommerceScraper = require('./scraper');
 
 // Initialize with options
 const scraper = new EcommerceScraper({
-  headless: true,        // Run in headless mode
-  delay: 3000,          // Delay between requests (ms)
+  headless: true, // Run in headless mode
+  delay: 3000, // Delay between requests (ms)
   outputFile: 'data.csv', // Output filename
-  timeout: 30000,       // Page timeout (ms)
-  maxRetries: 3         // Max retry attempts
+  timeout: 30000, // Page timeout (ms)
+  maxRetries: 3 // Max retry attempts
 });
 
 // Scrape products
@@ -303,6 +308,7 @@ node scraper.js amazon "test" --headless=false
 ## 🧪 Development
 
 ### Prerequisites
+
 - Node.js 18.0.0 or higher
 - npm or yarn package manager
 
@@ -442,12 +448,14 @@ console.log('Performance Metrics:', result.metrics);
 ## 🔒 Security & Privacy
 
 ### Data Protection
+
 - 🛡️ **No Personal Data**: Only public product information
 - 🔐 **Secure Headers**: All requests include security headers
 - 🚫 **No Cookies**: Stateless scraping approach
 - 📝 **Audit Trail**: All activities logged for compliance
 
 ### Best Practices Compliance
+
 - ✅ **Robots.txt Respect**: Automatic robots.txt checking
 - ⏱️ **Rate Limiting**: Built-in request throttling
 - 🏃 **Graceful Degradation**: Handles site changes elegantly
@@ -456,6 +464,7 @@ console.log('Performance Metrics:', result.metrics);
 ## 🌐 Internationalization
 
 This project supports multiple languages:
+
 - 🇺🇸 **English** (this file)
 - 🇯🇵 **Japanese** ([README-JP.md](README-JP.md))
 
@@ -483,7 +492,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Puppeteer Team** for the excellent automation library
 - **Node.js Community** for continuous innovation
 - **Open Source Contributors** who help improve this project
-- **Testing Websites** (books.toscrape.com, quotes.toscrape.com) for providing safe scraping environments
+- **Testing Websites** (books.toscrape.com, quotes.toscrape.com) for providing safe scraping
+  environments
 
 ---
 
