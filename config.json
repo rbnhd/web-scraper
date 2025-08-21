@@ -27,10 +27,7 @@
         "link": ".s-item__link",
         "image": ".s-item__image"
       },
-      "waitSelectors": [
-        ".s-item",
-        ".srp-results"
-      ]
+      "waitSelectors": [".s-item", ".srp-results"]
     },
     "etsy": {
       "name": "Etsy",
@@ -43,10 +40,7 @@
         "link": "[data-test-id=\"listing-link\"]",
         "image": ".listing-link-image img"
       },
-      "waitSelectors": [
-        "[data-test-id=\"listing\"]",
-        ".shop2-search-results"
-      ]
+      "waitSelectors": ["[data-test-id=\"listing\"]", ".shop2-search-results"]
     },
     "walmart": {
       "name": "Walmart",

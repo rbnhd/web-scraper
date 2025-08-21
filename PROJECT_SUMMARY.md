@@ -2,13 +2,13 @@
 
 ## 🎯 Project Overview
 
-Successfully created a comprehensive Node.js web scraper using Puppeteer that meets all the specified requirements:
+Successfully created a comprehensive Node.js web scraper using Puppeteer that meets all the
+specified requirements:
 
-✅ **Scrapes product titles and prices** from e-commerce sites
-✅ **Handles dynamic content loading** with proper wait conditions  
-✅ **Includes error handling** for failed requests
-✅ **Exports data to CSV** files
-✅ **Uses proper rate limiting** to avoid being blocked
+✅ **Scrapes product titles and prices** from e-commerce sites ✅ **Handles dynamic content
+loading** with proper wait conditions  
+✅ **Includes error handling** for failed requests ✅ **Exports data to CSV** files ✅ **Uses proper
+rate limiting** to avoid being blocked
 
 ## 📁 Project Structure
 
@@ -29,6 +29,7 @@ web-scraper/
 ## 🔧 Key Components
 
 ### 1. Main Scraper (`scraper.js`)
+
 - **EcommerceScraper class** with full functionality
 - **Multi-site support** (Amazon, eBay, Etsy, Walmart)
 - **Dynamic content handling** with intelligent selectors
@@ -37,16 +38,19 @@ web-scraper/
 - **CSV export** functionality
 
 ### 2. Demo Scraper (`demo.js`)
+
 - **Safe testing environment** using books.toscrape.com and quotes.toscrape.com
 - **Extends main scraper** for educational purposes
 - **Works perfectly** without bot detection issues
 
 ### 3. Configuration (`config.json`)
+
 - **Site-specific selectors** for different e-commerce platforms
 - **Configurable options** for timeouts, delays, and user agents
 - **Easy to extend** for new websites
 
 ### 4. Utilities (`utils.js`)
+
 - **Data cleaning and validation**
 - **Price parsing and normalization**
 - **File management helpers**
@@ -55,17 +59,20 @@ web-scraper/
 ## 🎮 Usage Examples
 
 ### Safe Demo (Recommended)
+
 ```bash
 npm run demo                    # Run with safe test sites
 ```
 
 ### Real E-commerce Sites
+
 ```bash
 node scraper.js amazon "headphones" --delay=3000
 node scraper.js ebay "vintage camera" --output=cameras.csv
 ```
 
 ### Advanced Options
+
 ```bash
 # Debug mode (visible browser)
 node scraper.js amazon "laptop" --headless=false
@@ -77,13 +84,15 @@ node scraper.js ebay "smartphone" --delay=5000 --timeout=60000
 ## 📊 Features Implemented
 
 ### Core Requirements ✅
+
 - [x] **Product scraping**: Extracts titles, prices, links, images
 - [x] **Dynamic content**: Waits for lazy-loaded content
-- [x] **Error handling**: Retry logic, timeout handling, graceful failures  
+- [x] **Error handling**: Retry logic, timeout handling, graceful failures
 - [x] **CSV export**: Well-formatted data export
 - [x] **Rate limiting**: Configurable delays and stealth features
 
 ### Advanced Features ✅
+
 - [x] **Multi-site support**: Amazon, eBay, Etsy, Walmart
 - [x] **Stealth mode**: User-agent rotation, request optimization
 - [x] **CLI interface**: Command-line tool with options
@@ -92,6 +101,7 @@ node scraper.js ebay "smartphone" --delay=5000 --timeout=60000
 - [x] **Comprehensive docs**: README, examples, and inline comments
 
 ### Bot Detection Mitigation ✅
+
 - [x] **Random delays**: Human-like timing patterns
 - [x] **Mouse movements**: Simulated user interactions
 - [x] **Headers optimization**: Realistic browser headers
@@ -150,4 +160,5 @@ node scraper.js amazon "your search term"
 - ✅ **Safe testing environment**
 - ✅ **Bot detection mitigation**
 
-The web scraper successfully demonstrates all requested functionality while providing a robust, extensible, and well-documented solution for e-commerce data extraction.
+The web scraper successfully demonstrates all requested functionality while providing a robust,
+extensible, and well-documented solution for e-commerce data extraction.

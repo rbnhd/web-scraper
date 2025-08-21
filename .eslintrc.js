@@ -1,27 +1,25 @@
 module.exports = {
   env: {
     node: true,
+    browser: true,
     es2021: true,
     jest: true
   },
-  extends: [
-    'eslint:recommended'
-  ],
+  extends: ['eslint:recommended'],
   parserOptions: {
     ecmaVersion: 12,
     sourceType: 'module'
   },
   rules: {
-    'no-console': 'warn',
-    'no-unused-vars': ['error', { 'argsIgnorePattern': '^_' }],
+    'no-console': 'off',
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'no-undef': 'error',
-    'semi': ['error', 'always'],
-    'quotes': ['error', 'single'],
-    'indent': ['error', 2],
+    semi: ['error', 'always'],
+    quotes: ['error', 'single'],
     'comma-dangle': ['error', 'never'],
     'no-trailing-spaces': 'error',
     'eol-last': 'error',
-    'no-multiple-empty-lines': ['error', { 'max': 2 }],
+    'no-multiple-empty-lines': ['error', { max: 2 }],
     'object-curly-spacing': ['error', 'always'],
     'array-bracket-spacing': ['error', 'never'],
     'space-before-function-paren': ['error', 'never'],
@@ -31,11 +29,5 @@ module.exports = {
     'prefer-const': 'error',
     'arrow-spacing': 'error'
   },
-  ignorePatterns: [
-    'node_modules/',
-    'coverage/',
-    '*.min.js',
-    'dist/',
-    'build/'
-  ]
+  ignorePatterns: ['node_modules/', 'coverage/', '*.min.js', 'dist/', 'build/']
 };
