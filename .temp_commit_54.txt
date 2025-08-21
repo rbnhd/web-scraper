@@ -1,0 +1,1 @@
+// Commit #54: docs - improve error handling in navigation logic
