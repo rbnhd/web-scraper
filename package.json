@@ -1,0 +1,26 @@
+{
+  "name": "ecommerce-web-scraper",
+  "version": "1.0.0",
+  "description": "A Node.js web scraper using Puppeteer to extract product data from e-commerce sites",
+  "main": "scraper.js",
+  "scripts": {
+    "start": "node scraper.js",
+    "demo": "node demo.js",
+    "example": "node examples.js",
+    "test": "node test.js",
+    "scrape:amazon": "node scraper.js amazon",
+    "scrape:ebay": "node scraper.js ebay"
+  },
+  "keywords": [
+    "web-scraping",
+    "puppeteer",
+    "ecommerce",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "csv-writer": "^1.6.0",
+    "puppeteer": "^19.11.1"
+  }
+}
