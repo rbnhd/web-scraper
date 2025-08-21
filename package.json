@@ -9,7 +9,14 @@
     "example": "node examples.js",
     "test": "node test.js",
     "scrape:amazon": "node scraper.js amazon",
-    "scrape:ebay": "node scraper.js ebay"
+    "scrape:ebay": "node scraper.js ebay",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "format": "prettier --write \"**/*.{js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,json,md}\"",
+    "validate": "npm run lint && npm run format:check && npm test",
+    "security:audit": "npm audit",
+    "security:fix": "npm audit fix"
   },
   "keywords": [
     "web-scraping",
@@ -22,5 +29,15 @@
   "dependencies": {
     "csv-writer": "^1.6.0",
     "puppeteer": "^19.11.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "audit-ci": "^6.6.1",
+    "license-checker": "^25.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }
