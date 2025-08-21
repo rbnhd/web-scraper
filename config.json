@@ -1,0 +1,81 @@
+{
+  "sites": {
+    "amazon": {
+      "name": "Amazon",
+      "baseUrl": "https://www.amazon.com",
+      "searchUrl": "https://www.amazon.com/s?k={searchTerm}",
+      "selectors": {
+        "productContainer": "[data-component-type=\"s-search-result\"]",
+        "title": "h2 a span, .a-size-mini span, .a-size-base-plus",
+        "price": ".a-price-whole, .a-offscreen",
+        "link": "h2 a",
+        "image": ".s-image"
+      },
+      "waitSelectors": [
+        "[data-component-type=\"s-search-result\"]",
+        ".s-result-list"
+      ]
+    },
+    "ebay": {
+      "name": "eBay",
+      "baseUrl": "https://www.ebay.com",
+      "searchUrl": "https://www.ebay.com/sch/i.html?_nkw={searchTerm}",
+      "selectors": {
+        "productContainer": ".s-item",
+        "title": ".s-item__title",
+        "price": ".s-item__price",
+        "link": ".s-item__link",
+        "image": ".s-item__image"
+      },
+      "waitSelectors": [
+        ".s-item",
+        ".srp-results"
+      ]
+    },
+    "etsy": {
+      "name": "Etsy",
+      "baseUrl": "https://www.etsy.com",
+      "searchUrl": "https://www.etsy.com/search?q={searchTerm}",
+      "selectors": {
+        "productContainer": "[data-test-id=\"listing\"]",
+        "title": "[data-test-id=\"listing-link\"]",
+        "price": ".currency-value",
+        "link": "[data-test-id=\"listing-link\"]",
+        "image": ".listing-link-image img"
+      },
+      "waitSelectors": [
+        "[data-test-id=\"listing\"]",
+        ".shop2-search-results"
+      ]
+    },
+    "walmart": {
+      "name": "Walmart",
+      "baseUrl": "https://www.walmart.com",
+      "searchUrl": "https://www.walmart.com/search?q={searchTerm}",
+      "selectors": {
+        "productContainer": "[data-testid=\"item\"]",
+        "title": "[data-automation-id=\"product-title\"]",
+        "price": "[itemprop=\"price\"]",
+        "link": "[data-automation-id=\"product-title\"]",
+        "image": "[data-testid=\"productTileImage\"]"
+      },
+      "waitSelectors": [
+        "[data-testid=\"item\"]",
+        "[data-testid=\"search-result\"]"
+      ]
+    }
+  },
+  "defaultOptions": {
+    "headless": true,
+    "timeout": 30000,
+    "delay": 2000,
+    "maxRetries": 3,
+    "outputFile": "scraped_products.csv",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+  },
+  "rateLimiting": {
+    "requestsPerMinute": 30,
+    "burstLimit": 5,
+    "backoffMultiplier": 2
+  }
+}
