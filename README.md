@@ -10,7 +10,7 @@
 A powerful, production-ready Node.js web scraper built with Puppeteer for extracting product data
 from various e-commerce websites.
 
-[Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) •
+[Features](#-features) • [Installation](#installation) • [Quick Start](#-quick-start) •
 [Documentation](#-documentation) • [Contributing](#-contributing)
 
 </div>

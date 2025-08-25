@@ -76,3 +76,4 @@ example_products.*
 # Demo output files (generated during testing)
 demo_books_*.csv
 demo_quotes_*.csv
+create_commits.sh
