@@ -10,14 +10,14 @@
 A powerful, production-ready Node.js web scraper built with Puppeteer for extracting product data
 from various e-commerce websites.
 
-[Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) •
-[Documentation](#-documentation) • [Contributing](#-contributing)
+[Features](#features) • [Installation](#installation) • [Quick Start](#quick-start) •
+[Documentation](#documentation) • [Contributing](#contributing)
 
 </div>
 
 ---
 
-## 🚨 Important Note
+## Important Note
 
 **For learning and testing purposes, use the demo scraper first:**
 
@@ -28,19 +28,19 @@ npm run demo
 This uses safe testing websites (books.toscrape.com and quotes.toscrape.com) that are designed for
 scraping practice.
 
-## ✨ Features
+## Features
 
-- 🚀 **Multi-site Support**: Scrape from Amazon, eBay, Etsy, Walmart, and more
-- 🔄 **Dynamic Content Handling**: Waits for dynamic content to load using intelligent selectors
-- 🛡️ **Error Handling**: Robust retry logic and error recovery
-- 📊 **CSV Export**: Exports scraped data to well-formatted CSV files
-- ⏱️ **Rate Limiting**: Built-in delays to avoid being blocked
-- 🎭 **Stealth Mode**: User-agent rotation and request optimization
-- 🖥️ **CLI Interface**: Easy-to-use command-line interface
-- 📝 **Configurable**: JSON-based configuration for different sites
-- 🧪 **Demo Mode**: Safe testing environment with demo websites
+- **Multi-site Support**: Scrape from Amazon, eBay, Etsy, Walmart, and more
+- **Dynamic Content Handling**: Waits for dynamic content to load using intelligent selectors
+- **Error Handling**: Robust retry logic and error recovery
+- **CSV Export**: Exports scraped data to well-formatted CSV files
+- **Rate Limiting**: Built-in delays to avoid being blocked
+- **Stealth Mode**: User-agent rotation and request optimization
+- **CLI Interface**: Easy-to-use command-line interface
+- **Configurable**: JSON-based configuration for different sites
+- **Demo Mode**: Safe testing environment with demo websites
 
-## 🛠️ Installation
+## Installation
 
 ### Prerequisites
 
@@ -59,7 +59,7 @@ npm install
 > **Note**: If you're using Node.js < 18, you may see compatibility warnings. The code will still
 > work in CI/CD environments running Node.js 18+.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Safe Demo (Recommended for Learning)
 
@@ -94,13 +94,13 @@ node scraper.js amazon "laptop" --headless=false --delay=3000
 node scraper.js ebay "smartphone" --output=my_products.csv
 ```
 
-## ⚠️ Bot Detection & Limitations
+## Bot Detection & Limitations
 
 **Amazon and other major e-commerce sites have sophisticated bot detection:**
 
-- ✅ **Demo sites work perfectly** (books.toscrape.com, quotes.toscrape.com)
-- ⚠️ **Amazon may block requests** - use longer delays and respect robots.txt
-- 📧 **eBay and others may require special handling**
+- **Demo sites work perfectly** (books.toscrape.com, quotes.toscrape.com)
+- **Amazon may block requests** - use longer delays and respect robots.txt
+- **eBay and others may require special handling**
 
 **If you encounter bot detection:**
 
@@ -109,7 +109,7 @@ node scraper.js ebay "smartphone" --output=my_products.csv
 3. Try the demo sites first: `npm run demo`
 4. Consider using official APIs instead
 
-## 📋 Available Scripts
+## Available Scripts
 
 | Command           | Description                           |
 | ----------------- | ------------------------------------- |
@@ -118,24 +118,24 @@ node scraper.js ebay "smartphone" --output=my_products.csv
 | `npm start`       | Run main scraper (requires arguments) |
 | `npm run example` | Run example scripts                   |
 
-## 📊 Project Status
+## Project Status
 
 ### CI/CD Pipeline
 
-- ✅ **Multi-Node Testing**: Validated on Node.js 18.x, 20.x, 22.x
-- ✅ **Security Scanning**: Automated vulnerability detection
-- ✅ **Code Quality**: ESLint + Prettier enforcement
-- ✅ **Dependency Review**: Automated dependency security checks
-- ✅ **Main Branch Protection**: Comprehensive pre-deployment validation
+- **Multi-Node Testing**: Validated on Node.js 18.x, 20.x, 22.x
+- **Security Scanning**: Automated vulnerability detection
+- **Code Quality**: ESLint + Prettier enforcement
+- **Dependency Review**: Automated dependency security checks
+- **Main Branch Protection**: Comprehensive pre-deployment validation
 
 ### Performance Metrics
 
-- ⚡ **Scraping Speed**: 2-5 seconds per page (configurable)
-- 📈 **Success Rate**: 95%+ on supported demo sites
-- 🛡️ **Error Recovery**: 3-retry mechanism with exponential backoff
-- 💾 **Memory Efficient**: Optimized resource blocking
+- **Scraping Speed**: 2-5 seconds per page (configurable)
+- **Success Rate**: 95%+ on supported demo sites
+- **Error Recovery**: 3-retry mechanism with exponential backoff
+- **Memory Efficient**: Optimized resource blocking
 
-## 🎯 Supported Sites
+## Supported Sites
 
 ### Demo Sites (Safe for Testing)
 
@@ -149,7 +149,7 @@ node scraper.js ebay "smartphone" --output=my_products.csv
 - **Etsy** (`etsy`)
 - **Walmart** (`walmart`)
 
-## 📖 Documentation
+## Documentation
 
 ### Core API
 
@@ -198,7 +198,7 @@ The `config.json` file defines site-specific selectors:
 }
 ```
 
-## 🔧 Advanced Configuration
+## Advanced Configuration
 
 ## Options
 
@@ -351,7 +351,7 @@ npm run test:e2e
 npm run test:coverage
 ```
 
-## 🚀 Deployment
+## Deployment
 
 ### Production Build
 
@@ -375,7 +375,7 @@ EXPOSE 3000
 CMD ["npm", "start"]
 ```
 
-## 🤝 Contributing
+## Contributing
 
 To add support for a new e-commerce site:
 
@@ -390,7 +390,7 @@ To add support for a new e-commerce site:
 - **fs**: File system operations
 - **path**: Path utilities
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
