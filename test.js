@@ -95,7 +95,10 @@ async function runAllTests() {
 
 // Run tests if script is executed directly
 if (require.main === module) {
-  runAllTests();
+  runAllTests().catch(error => {
+    console.error('❌ Test execution failed:', error.message);
+    process.exit(1);
+  });
 }
 
 module.exports = {
