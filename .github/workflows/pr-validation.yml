@@ -37,7 +37,7 @@ jobs:
         
     - name: Run ESLint
       run: |
-        npx eslint . --ext .js --max-warnings 0
+        npx eslint . --max-warnings 0
         
     - name: Run unit tests
       run: |
