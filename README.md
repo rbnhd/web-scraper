@@ -305,7 +305,7 @@ Run with visible browser to debug:
 node scraper.js amazon "test" --headless=false
 ```
 
-## 🧪 Development
+## Development
 
 ### Prerequisites
 
@@ -414,13 +414,13 @@ To add support for a new e-commerce site:
 
 ### Code Standards
 
-- ✅ ESLint configuration enforced
-- ✅ Prettier formatting required
-- ✅ 100% test coverage expected
-- ✅ JSDoc comments for all public methods
-- ✅ Conventional commit messages
+- ESLint configuration enforced
+- Prettier formatting required
+- 100% test coverage expected
+- JSDoc comments for all public methods
+- Conventional commit messages
 
-## 📈 Performance & Monitoring
+## Performance & Monitoring
 
 ### Metrics Dashboard
 
@@ -440,54 +440,46 @@ console.log('Performance Metrics:', result.metrics);
 
 ### Optimization Tips
 
-- 🚀 **Resource Blocking**: Images, CSS, fonts blocked by default
-- ⚡ **Concurrent Processing**: Multiple pages processed simultaneously
-- 💾 **Memory Management**: Automatic browser context cleanup
-- 🔄 **Connection Pooling**: Reuse browser instances when possible
+- **Resource Blocking**: Images, CSS, fonts blocked by default
+- **Concurrent Processing**: Multiple pages processed simultaneously
+- **Memory Management**: Automatic browser context cleanup
+- **Connection Pooling**: Reuse browser instances when possible
 
-## 🔒 Security & Privacy
+## Security & Privacy
 
 ### Data Protection
 
-- 🛡️ **No Personal Data**: Only public product information
-- 🔐 **Secure Headers**: All requests include security headers
-- 🚫 **No Cookies**: Stateless scraping approach
-- 📝 **Audit Trail**: All activities logged for compliance
+- **No Personal Data**: Only public product information
+- **Secure Headers**: All requests include security headers
+- **No Cookies**: Stateless scraping approach
+- **Audit Trail**: All activities logged for compliance
 
 ### Best Practices Compliance
 
-- ✅ **Robots.txt Respect**: Automatic robots.txt checking
-- ⏱️ **Rate Limiting**: Built-in request throttling
-- 🏃 **Graceful Degradation**: Handles site changes elegantly
-- 📋 **Terms Compliance**: Respects website ToS
+- **Robots.txt Respect**: Automatic robots.txt checking
+- **Rate Limiting**: Built-in request throttling
+- **Graceful Degradation**: Handles site changes elegantly
+- **Terms Compliance**: Respects website ToS
 
-## 🌐 Internationalization
+## Internationalization
 
 This project supports multiple languages:
 
-- 🇺🇸 **English** (this file)
-- 🇯🇵 **Japanese** ([README-JP.md](README-JP.md))
+- **English** (this file)
+- **Japanese** ([README-JP.md](README-JP.md))
 
-## 📞 Support
+## Support
 
 ### Getting Help
 
-- 📚 **Documentation**: Check our [Wiki](../../wiki)
-- 🐛 **Bug Reports**: [Open an issue](../../issues/new?template=bug_report.md)
-- 💡 **Feature Requests**: [Open an issue](../../issues/new?template=feature_request.md)
-- 💬 **Discussions**: [GitHub Discussions](../../discussions)
+- **Bug Reports**: [Open an issue](../../issues/new?template=bug_report.md)
+- **Feature Requests**: [Open an issue](../../issues/new?template=feature_request.md)
 
-### Community
-
-- 🌟 **Star** the project if you find it useful
-- 🐦 **Follow** us for updates
-- 📢 **Share** with the community
-
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Puppeteer Team** for the excellent automation library
 - **Node.js Community** for continuous innovation
@@ -499,7 +491,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**Made with ❤️ by the community**
+**Made with love by the community**
 
 [⬆ Back to Top](#e-commerce-web-scraper)
 
