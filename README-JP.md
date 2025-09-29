@@ -453,16 +453,8 @@ console.log('パフォーマンス指標:', result.metrics);
 
 ### ヘルプの取得
 
-- **ドキュメント**: [Wiki](../../wiki)を確認
 - **バグレポート**: [Issue を開く](../../issues/new?template=bug_report.md)
 - **機能リクエスト**: [Issue を開く](../../issues/new?template=feature_request.md)
-- **ディスカッション**: [GitHub Discussions](../../discussions)
-
-### コミュニティ
-
-- プロジェクトが役立つと思ったら**スター**をつけてください
-- アップデートのために**フォロー**してください
-- コミュニティと**共有**してください
 
 ## ライセンス
 
