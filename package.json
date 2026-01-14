@@ -35,7 +35,7 @@
     "audit-ci": "^7.1.0",
     "eslint": "^9.39.1",
     "license-checker": "^25.0.1",
-    "prettier": "^3.2.5"
+    "prettier": "^3.7.4"
   },
   "engines": {
     "node": ">=18.0.0",
