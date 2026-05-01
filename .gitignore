@@ -77,3 +77,19 @@ example_products.*
 demo_books_*.csv
 demo_quotes_*.csv
 create_commits.sh
+
+# local
+.local*
+
+# AI agents / assistants
+.claude/
+.cursor/
+.aider*
+.continue/
+.windsurf/
+.codeium/
+.cody/
+.tabnine/
+.gemini/
+.copilot/
+.zed/
